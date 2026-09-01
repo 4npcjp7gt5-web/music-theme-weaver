@@ -48,12 +48,12 @@ const EMBEDS: Record<
     apple: true,
   },
   christian: {
-    src: "https://open.spotify.com/embed/artist/4kPWNGfm8xjSXSsZesTk7y?utm_source=generator&theme=0",
+    src: "https://open.spotify.com/embed/artist/4kPWNGfm8xjSXSsZesTk7y",
     title: "Matt Kindle on Spotify",
     caption: "Full Christian playlist coming soon — stream the latest on Spotify.",
   },
   country: {
-    src: "https://open.spotify.com/embed/artist/4kPWNGfm8xjSXSsZesTk7y?utm_source=generator&theme=0",
+    src: "https://open.spotify.com/embed/artist/4kPWNGfm8xjSXSsZesTk7y",
     title: "Matt Kindle on Spotify",
     caption: "Full country playlist coming soon — stream the latest on Spotify.",
   },
