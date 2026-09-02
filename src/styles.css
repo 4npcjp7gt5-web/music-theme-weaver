@@ -120,7 +120,7 @@
 
 /* ---- Retro 80s hero title ---- */
 @utility retro-80s {
-  font-family: "Audiowide", "Playfair Display", serif;
+  font-family: "Pacifico", "Dancing Script", cursive;
   background-image: linear-gradient(
     180deg,
     oklch(0.98 0.02 95) 0%,
@@ -135,11 +135,12 @@
   filter: drop-shadow(0 2px 0 oklch(0.35 0.12 20))
     drop-shadow(0 0 22px oklch(0.72 0.16 45 / 0.55))
     drop-shadow(0 0 60px oklch(0.6 0.2 340 / 0.35));
-  letter-spacing: 0.06em;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
 }
 
 @utility retro-sub {
-  font-family: "Audiowide", "Inter", sans-serif;
+  font-family: "Satisfy", "Pacifico", cursive;
   color: oklch(0.9 0.05 95);
   text-shadow:
     0 0 10px oklch(0.72 0.16 45 / 0.8),
