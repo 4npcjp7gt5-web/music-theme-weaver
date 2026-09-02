@@ -108,13 +108,8 @@ function Index() {
           className="absolute inset-0 h-full w-full object-cover object-[center_65%]"
         />
         <div className="absolute inset-0 bg-black/45" />
-        <div className="relative z-10 text-center">
-          <img
-            src={albumArt.url}
-            alt="13 Channels"
-            className="mx-auto mb-4 w-[60%] max-w-[250px] rounded-lg shadow-[0_0_30px_rgba(16,185,129,0.6)]"
-          />
-          <p className="font-tagline text-sm tracking-[0.3em] text-primary glow-emerald">
+        <div className="relative z-10 pb-8 text-center">
+          <p className="font-tagline text-[clamp(0.6rem,1.45vw,0.85rem)] tracking-[0.3em] text-primary glow-emerald">
             {tagline}
           </p>
         </div>
