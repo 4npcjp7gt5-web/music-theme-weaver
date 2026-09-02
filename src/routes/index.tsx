@@ -1,6 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import albumArt from "@/assets/album-13-channels.png.asset.json";
+import heroRoom from "@/assets/hero-tv-room.jpg";
+import boyWalking from "@/assets/boy-walking.png";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
