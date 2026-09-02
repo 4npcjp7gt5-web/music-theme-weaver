@@ -100,26 +100,48 @@ function Index() {
       </nav>
 
       {/* HERO */}
-      <header id="top" className="relative flex min-h-[85vh] items-end justify-center overflow-hidden">
-        <img
-          src={albumArt.url}
-          alt="13 Channels album artwork — a vintage Zenith television in a wood-paneled room"
-          className="absolute inset-0 h-full w-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-background/70" />
-        <div className="absolute inset-0 vignette" />
-        <div className="relative z-10 pb-20 text-center">
-          <p className="text-xs font-medium uppercase tracking-[0.5em] text-primary glow-amber">
+      <header id="top" className="relative overflow-hidden pt-16">
+        <div className="relative mx-auto w-full">
+          <img
+            src={heroRoom}
+            alt="A vintage Zenith television in a wood-paneled 1980s bedroom, showing a grassy hill"
+            className="block h-auto w-full"
+          />
+
+          {/* TV screen stage — percentages map to the artwork above */}
+          <div
+            className="absolute overflow-hidden"
+            style={{ left: "25.3%", top: "39.1%", width: "40.6%", height: "37%" }}
+            aria-hidden="true"
+          >
+            <div className="walker absolute -translate-x-1/2">
+              <img
+                src={boyWalking}
+                alt=""
+                className="walker-bob h-full w-auto origin-bottom opacity-95"
+                style={{ filter: "saturate(0.85) contrast(0.95) brightness(0.95)" }}
+              />
+            </div>
+            <div className="tv-scanlines absolute inset-0" />
+          </div>
+
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-background via-background/60 to-transparent" />
+          <div className="absolute inset-0 vignette" />
+        </div>
+
+        <div className="relative z-10 -mt-6 pb-14 text-center sm:-mt-14">
+          <p className="retro-sub text-[0.65rem] uppercase tracking-[0.55em] sm:text-xs">
             The new album
           </p>
-          <h1 className="mt-3 font-display text-5xl font-semibold tracking-wide text-cream glow-amber sm:text-7xl">
+          <h1 className="retro-80s mt-4 text-4xl uppercase sm:text-6xl md:text-7xl">
             13 Channels
           </h1>
-          <p className="mt-4 font-display text-xl tracking-[0.3em] text-muted-foreground">
-            MATT KINDLE
+          <p className="retro-sub mt-4 text-sm uppercase tracking-[0.4em] sm:text-lg">
+            Matt Kindle
           </p>
         </div>
       </header>
+
 
       <main className="mx-auto max-w-5xl px-6 pb-24">
         {/* MUSIC */}
