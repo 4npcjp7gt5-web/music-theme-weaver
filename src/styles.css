@@ -118,44 +118,22 @@
   box-shadow: inset 0 0 180px oklch(0.08 0.015 55 / 0.85);
 }
 
-/* ---- Retro 80s hero title ---- */
+/* ---- Elegant hand-lettered hero title, album-liner style ---- */
 @utility retro-80s {
-  font-family: "Pacifico", "Dancing Script", cursive;
-  background-image: linear-gradient(
-    180deg,
-    oklch(0.98 0.02 95) 0%,
-    oklch(0.9 0.09 95) 38%,
-    oklch(0.78 0.16 60) 52%,
-    oklch(0.62 0.19 20) 74%,
-    oklch(0.55 0.2 340) 100%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  filter: drop-shadow(0 2px 0 oklch(0.35 0.12 20))
-    drop-shadow(0 0 22px oklch(0.72 0.16 45 / 0.55))
-    drop-shadow(0 0 60px oklch(0.6 0.2 340 / 0.35));
-  letter-spacing: 0.02em;
-  line-height: 1.1;
+  font-family: "Great Vibes", "Alex Brush", cursive;
+  color: oklch(0.93 0.035 95);
+  filter: drop-shadow(0 2px 3px oklch(0.08 0.02 55 / 0.85))
+    drop-shadow(0 6px 22px oklch(0.08 0.02 55 / 0.5));
+  letter-spacing: 0.015em;
+  line-height: 1.15;
 }
 
 @utility retro-sub {
-  font-family: "Satisfy", "Pacifico", cursive;
-  color: oklch(0.9 0.05 95);
-  text-shadow:
-    0 0 10px oklch(0.72 0.16 45 / 0.8),
-    0 0 30px oklch(0.6 0.2 340 / 0.5);
-}
-
-/* horizontal scanline sheen across the title, 80s chrome style */
-@utility retro-scan {
-  background-image: repeating-linear-gradient(
-    180deg,
-    oklch(0.1 0.02 55 / 0.28) 0px,
-    oklch(0.1 0.02 55 / 0.28) 2px,
-    transparent 2px,
-    transparent 7px
-  );
+  font-family: "Playfair Display", Georgia, serif;
+  color: oklch(0.78 0.06 85);
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  text-shadow: 0 1px 2px oklch(0.08 0.02 55 / 0.8);
 }
 
 /* ---- TV screen: boy walking up the hill ---- */
