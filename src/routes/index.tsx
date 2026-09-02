@@ -39,6 +39,8 @@ const TABS: { id: PlaylistTab; label: string }[] = [
   { id: "country", label: "Country" },
 ];
 
+const tagline = "MATT KINDLE";
+
 const EMBEDS: Record<
   PlaylistTab,
   { src: string; title: string; caption?: string; apple?: boolean }
@@ -254,5 +256,3 @@ function Index() {
     </div>
   );
 }
-
-const tagline = "MATT KINDLE";
