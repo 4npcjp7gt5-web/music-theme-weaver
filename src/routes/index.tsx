@@ -130,6 +130,9 @@ function Index() {
         </div>
 
         <div className="relative z-10 -mt-6 pb-14 text-center sm:-mt-14">
+          <p className="retro-pre mb-4 text-[0.65rem] sm:text-xs">
+            The New Album
+          </p>
           <h1 className="retro-80s text-6xl sm:text-8xl md:text-9xl">
             13 Channels
           </h1>
