@@ -5,8 +5,8 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * Design system — dark "13 Channels" theme.
- * Deep black, emerald accent, cream text, Rubik Dirt tagline.
+ * Design system — "13 Channels" warm vintage theme.
+ * Deep walnut wood, amber lamp glow, aged cream, sunset rust.
  */
 
 @theme inline {
@@ -37,34 +37,39 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-ring-offset-background: var(--background);
+  --color-ember: var(--ember);
+  --color-cream: var(--cream);
   --font-display: "Playfair Display", Georgia, serif;
   --font-body: "Inter", system-ui, sans-serif;
-  --font-tagline: "Rubik Dirt", "Playfair Display", serif;
 }
 
 :root {
   --radius: 0.625rem;
-  /* deep black */
-  --background: #0f0f0f;
-  --foreground: #f3f3f3;
-  --card: #161616;
-  --card-foreground: #f3f3f3;
-  --popover: #161616;
-  --popover-foreground: #f3f3f3;
-  /* emerald accent */
-  --primary: #10b981;
-  --primary-foreground: #0f0f0f;
-  --secondary: #1a1a1a;
-  --secondary-foreground: #f3f3f3;
-  --muted: #1a1a1a;
-  --muted-foreground: #b5b5b5;
-  --accent: #065f46;
-  --accent-foreground: #f3f3f3;
-  --destructive: #ef4444;
-  --destructive-foreground: #f3f3f3;
-  --border: #2a2a2a;
-  --input: #2a2a2a;
-  --ring: #10b981;
+  /* walnut paneling */
+  --background: oklch(0.16 0.025 60);
+  /* aged cream */
+  --foreground: oklch(0.92 0.03 90);
+  --card: oklch(0.21 0.03 55);
+  --card-foreground: oklch(0.92 0.03 90);
+  --popover: oklch(0.21 0.03 55);
+  --popover-foreground: oklch(0.92 0.03 90);
+  /* lamp-glow amber */
+  --primary: oklch(0.75 0.12 75);
+  --primary-foreground: oklch(0.18 0.03 55);
+  --secondary: oklch(0.26 0.035 55);
+  --secondary-foreground: oklch(0.88 0.04 85);
+  --muted: oklch(0.24 0.03 55);
+  --muted-foreground: oklch(0.68 0.045 75);
+  --accent: oklch(0.3 0.05 50);
+  --accent-foreground: oklch(0.9 0.035 85);
+  --destructive: oklch(0.6 0.19 30);
+  --destructive-foreground: oklch(0.95 0.02 85);
+  --border: oklch(0.32 0.035 55);
+  --input: oklch(0.32 0.035 55);
+  --ring: oklch(0.75 0.12 75);
+  /* sunset rust / ember from the poster sky */
+  --ember: oklch(0.62 0.14 45);
+  --cream: oklch(0.92 0.03 90);
 }
 
 @layer base {
@@ -83,19 +88,143 @@
   }
 }
 
-/* Tagline / gritty display font */
-@utility font-tagline {
-  font-family: var(--font-tagline);
+/* Subtle wood-grain texture overlay */
+@utility wood-grain {
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      oklch(0.18 0.03 55 / 0.35) 0px,
+      oklch(0.18 0.03 55 / 0.35) 2px,
+      transparent 2px,
+      transparent 90px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      oklch(0.13 0.02 55 / 0.5) 0px,
+      oklch(0.13 0.02 55 / 0.5) 1px,
+      transparent 1px,
+      transparent 130px
+    );
 }
 
-/* Emerald glow for headings and accents */
-@utility glow-emerald {
+/* Warm lamp glow for headings and accents */
+@utility glow-amber {
   text-shadow:
-    0 0 10px rgba(16, 185, 129, 0.6),
-    0 0 22px rgba(16, 185, 129, 0.25);
+    0 0 18px oklch(0.75 0.12 75 / 0.45),
+    0 0 42px oklch(0.75 0.12 75 / 0.2);
 }
 
-/* White drop-shadow used on the nav logo */
-@utility logo-glow {
-  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
+@utility vignette {
+  box-shadow: inset 0 0 180px oklch(0.08 0.015 55 / 0.85);
+}
+
+/* ---- Retro 80s hero title ---- */
+@utility retro-80s {
+  font-family: "Audiowide", "Playfair Display", serif;
+  background-image: linear-gradient(
+    180deg,
+    oklch(0.98 0.02 95) 0%,
+    oklch(0.9 0.09 95) 38%,
+    oklch(0.78 0.16 60) 52%,
+    oklch(0.62 0.19 20) 74%,
+    oklch(0.55 0.2 340) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 2px 0 oklch(0.35 0.12 20))
+    drop-shadow(0 0 22px oklch(0.72 0.16 45 / 0.55))
+    drop-shadow(0 0 60px oklch(0.6 0.2 340 / 0.35));
+  letter-spacing: 0.06em;
+}
+
+@utility retro-sub {
+  font-family: "Audiowide", "Inter", sans-serif;
+  color: oklch(0.9 0.05 95);
+  text-shadow:
+    0 0 10px oklch(0.72 0.16 45 / 0.8),
+    0 0 30px oklch(0.6 0.2 340 / 0.5);
+}
+
+/* horizontal scanline sheen across the title, 80s chrome style */
+@utility retro-scan {
+  background-image: repeating-linear-gradient(
+    180deg,
+    oklch(0.1 0.02 55 / 0.28) 0px,
+    oklch(0.1 0.02 55 / 0.28) 2px,
+    transparent 2px,
+    transparent 7px
+  );
+}
+
+/* ---- TV screen: boy walking up the hill ---- */
+@keyframes walk-up-hill {
+  0% {
+    left: 40%;
+    bottom: 3%;
+    height: 36%;
+    opacity: 0;
+  }
+  6% {
+    opacity: 1;
+  }
+  92% {
+    opacity: 1;
+  }
+  100% {
+    left: 56%;
+    bottom: 45%;
+    height: 11%;
+    opacity: 0.85;
+  }
+}
+
+@keyframes walk-bob {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-1.2deg);
+  }
+  50% {
+    transform: translateY(-8%) rotate(1.2deg);
+  }
+}
+
+@keyframes tv-flicker {
+  0%,
+  100% {
+    opacity: 0.1;
+  }
+  47% {
+    opacity: 0.16;
+  }
+  52% {
+    opacity: 0.06;
+  }
+}
+
+@utility walker {
+  animation: walk-up-hill 22s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@utility walker-bob {
+  animation: walk-bob 0.9s ease-in-out infinite;
+}
+
+@utility tv-scanlines {
+  background-image: repeating-linear-gradient(
+    180deg,
+    oklch(0.05 0.01 55 / 0.5) 0px,
+    oklch(0.05 0.01 55 / 0.5) 1px,
+    transparent 1px,
+    transparent 4px
+  );
+  animation: tv-flicker 4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .walker,
+  .walker-bob,
+  .tv-scanlines {
+    animation: none;
+  }
 }
